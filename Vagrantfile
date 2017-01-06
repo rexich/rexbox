@@ -23,8 +23,8 @@ Vagrant.configure("2") do |config|
   # Enable X11 forwarding, so you can run X applications, like Firefox
   config.ssh.forward_x11 = true
 
-  # Shared folder (using NFS is 2x faster)
-  config.vm.synced_folder "data", "/vagrant_data", nfs: true
+  # Shared folder
+  config.vm.synced_folder "data", "/vagrant_data"
 
 
   config.vm.provider "virtualbox" do |vb|
@@ -55,5 +55,5 @@ Vagrant.configure("2") do |config|
   end
 
   # Provision the machine and install software on first start
-  config.vm.provision "shell", :privileged => false, :inline => "bash /vagrant/provision.sh"
+  config.vm.provision "shell", :privileged => false, :inline => "bash /vagrant/provision"
 end
