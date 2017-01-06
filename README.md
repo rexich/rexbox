@@ -48,11 +48,8 @@ $ ./install
 
 # Get inside the machine and start working :)
 $ rxb
-```
-* The script will request your password because it will need to install
-  some tools to your system, such as VirtualBox and Vagrant, if needed
-```sh
-# Stop the machine
+
+# Stop the machine (once you exit the SSH session)
 $ rxh
 ```
 
