@@ -3,7 +3,7 @@
 RexBox is a Vagrant box designed to allow developers to get started
 with their work as soon as possible. Based on Ubuntu 14.04.5 LTS 64-bit,
 it provides a solid base with the latest versions of programming
-languages and various tools, such as Erlang, Elixir, Ruby, AWS-cli, etc.
+languages and various tools, such as Erlang, Elixir, Ruby, etc.
 
 Partly based on shiroyasha's [boxbox](https://github.com/shiroyasha/boxbox).
 
@@ -11,7 +11,8 @@ Partly based on shiroyasha's [boxbox](https://github.com/shiroyasha/boxbox).
 ## Requirements
 
 * Ubuntu 14.04 LTS or 16.04 LTS, 64-bit only
-* VirtualBox and its Extension Pack >= 5.0
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and its
+  Extension Pack >= 5.0
 * Latest [Vagrant](https://www.vagrantup.com/downloads.html)
 * If you intend to use RexBox on other Linux distributions or macOS,
   make sure you install the latest VirtualBox and Vagrant on your
@@ -38,11 +39,11 @@ In your terminal emulator:
 * Clone this Git repository and start the installation:
 ```sh
 # Make a directory to keep the RexBox files, clone repository in it
-$ mkdir ~/rexbox
-$ cd ~/rexbox
+$ cd
 $ git clone git@github.com:rexich/rexbox.git
 
 # Install necessities
+$ cd ~/rexbox
 $ ./install
 
 # Get inside the machine and start working :)
@@ -58,7 +59,8 @@ $ rxh
 
 ## MIT License
 
-Copyright (c) 2017 Filip Dimovski, portions Copyright (c) 2017 Igor Šarčević
+Copyright (c) 2017 Filip Dimovski
+Portions Copyright (c) 2017 Igor Šarčević
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

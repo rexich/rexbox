@@ -14,18 +14,25 @@ echo -e "\
 \n\
 […] Performing checks..."
 
-if ! [ -f "./helpers.sh" ]; then
-  echo "[!] Helper script missing. Aborting."
-  exit 1
+if ! [ -d ~/rexbox ] ; then
+  echo "[!] RexBox directory is missing. Clone the Git repository in your home folder:"
+  echo "    $ git clone git@github.com:rexich/rexbox.git"
+  echo "    and then run this script from inside the ~/rexbox directory."
+  exit 0
 fi
 
-source "./helpers.sh"
+cd ~/rexbox/installations/
 
-[ -d ~/rexbox ] && bye "[✓] RexBox is already installed.\n\
-    Remove ~/rexbox directory from the home folder and run the \
-script again."
-
-cd installations/
-
+echo "[>] Setting up necessary programs..."
 bash virtualbox.sh
 bash vagrant.sh
+
+echo -n "[>] Setting up aliases in Bash profile..."
+echo 'alias rxb="cd ~/rexbox && vagrant up && vagrant ssh -c \"tmux -2\""' >> ~/.bashrc
+echo 'alias rxh="cd ~/rexbox && vagrant halt"' >> ~/.bashrc
+echo "done."
+
+echo -e "[✓] RexBox installation complete.\n\
+To start using RexBox, type 'rxb' to boot it up and SSH inside it.\n\
+To stop the machine, type 'rxh' in your terminal.\n\
+Thank you for using RexBox. I hope it will suit you well. :)"

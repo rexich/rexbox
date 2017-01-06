@@ -18,11 +18,10 @@ else
   sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 \
     --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
   # Install Docker Engine
-  sudo apt-get install docker-engine
-  sudo service docker start
+  sudo apt-get install -y docker-engine
   # Install Docker Compose
   sudo curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)" \
-    -o /usr/local/bin/docker-compose
+    -o /usr/local/bin/docker-compose 2>&1 > /dev/null
   sudo chmod +x /usr/local/bin/docker-compose
   echo "[✓] Installation of Docker and Docker Compose is complete."
 fi
