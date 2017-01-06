@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # Prepares the system for installing Vagrant and the RexBox
+#~ set -e
+#~ set -x
 
 echo -e "\
              _             \n\
@@ -23,4 +25,7 @@ source "./helpers.sh"
     Remove ~/rexbox directory from the home folder and run the \
 script again."
 
-./installations/virtualbox.sh
+cd installations/
+
+bash virtualbox.sh
+bash vagrant.sh

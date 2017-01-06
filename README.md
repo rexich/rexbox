@@ -1,12 +1,5 @@
 # RexBox - Vagrant-based Development Box
 
-```
-             _             
- _ _ _____ _| |__  _____ __
-| '_/ -_) \ / '_ \/ _ \ \ /
-|_| \___/_\_\_.__/\___/_\_\
-```
-
 RexBox is a Vagrant box designed to allow developers to get started
 with their work as soon as possible. Based on Ubuntu 14.04.5 LTS 64-bit,
 it provides a solid base with the latest versions of programming
@@ -17,15 +10,16 @@ Partly based on shiroyasha's [boxbox](https://github.com/shiroyasha/boxbox).
 
 ## Requirements
 
-* Ubuntu 14.04 LTS, 16.04 LTS
-* macOS
+* Ubuntu 14.04 LTS or 16.04 LTS, 64-bit only
 * VirtualBox and its Extension Pack >= 5.0
-* If you intend to use RexBox on other Linux distributions, make sure
-  you install the latest VirtualBox and Vagrant on your system, so then
-  you can skip the `./install` script and just `vagrant up`
+* Latest [Vagrant](https://www.vagrantup.com/downloads.html)
+* If you intend to use RexBox on other Linux distributions or macOS,
+  make sure you install the latest VirtualBox and Vagrant on your
+  system, so then you can skip running `./install` script and just
+  `vagrant up` the box
 * At least 4 GiB of RAM, RexBox will use half of it (8 GiB of RAM or
   more is highly recommended)
-* At least 6 GiB of storage space
+* At least 6 GiB of storage space (the more, the better)
 
 
 ## Installed software
@@ -35,6 +29,7 @@ Partly based on shiroyasha's [boxbox](https://github.com/shiroyasha/boxbox).
 * Erlang 19.2
 * Elixir 1.4
 * Git, Vim, Htop, build-essential
+* Docker 1.12.5, Docker Compose 1.8.1
 
 
 # Usage
@@ -47,21 +42,17 @@ $ mkdir ~/rexbox
 $ cd ~/rexbox
 $ git clone git@github.com:rexich/rexbox.git
 
-# Install necessities and boot up the machine
+# Install necessities
 $ ./install
-$ vagrant up
 
 # Get inside the machine and start working :)
-$ vagrant ssh
+$ rxb
 ```
 * The script will request your password because it will need to install
   some tools to your system, such as VirtualBox and Vagrant, if needed
 ```sh
 # Stop the machine
-$ vagrant halt
-
-# Destroy the machine (you can recreate it again with 'vagrant up')
-$ vagrant destroy
+$ rxh
 ```
 
 
