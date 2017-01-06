@@ -19,5 +19,7 @@ else
     "https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.deb"
   sudo dpkg -i /tmp/vagrant_1.9.1_x86_64.deb
   rm /tmp/vagrant_1.9.1_x86_64.deb
+  # Install Vagrant host manager plugin
+  vagrant plugin install vagrant-hostmanager
   echo "[✓] Installation of Vagrant is complete."
 fi
