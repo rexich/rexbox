@@ -15,3 +15,4 @@ bash /vagrant/provisioning/tools.sh
 bash /vagrant/provisioning/ruby.sh
 bash /vagrant/provisioning/erlang_elixir.sh
 bash /vagrant/provisioning/docker.sh
+bash /vagrant/provisioning/rabbitmq.sh
